@@ -19,7 +19,9 @@ def index():
 def insert():
     if request.method == "POST":
         name = request.form.get("name")
-        salary = float(request.form.get("salary"))
+        salary = int(request.form.get("salary"))
+		
+        print(f"Name {name} Salary {salary}")
 
         if name and salary:
             try:
