@@ -32,7 +32,7 @@ def insert():
             except Exception as e:
                 return render_template("insert.html", status="Bad")
     else:
-        # helloooooo
+        # hellooooooo
         return render_template("insert.html")
 
 
@@ -44,7 +44,7 @@ def view():
     cur.execute(query)
     employees = cur.fetchall()
     cur.close()
-    
+
     return render_template("see-all.html", employees=employees)
 	
 
