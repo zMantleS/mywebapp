@@ -30,9 +30,9 @@ def insert():
                 cur.close()
                 return render_template("insert.html", status="Good")
             except Exception as e:
-                print(f"Error: {e}")
                 return render_template("insert.html", status="Bad")
     else:
+        # hello
         return render_template("insert.html")
 
 
