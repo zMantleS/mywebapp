@@ -6,7 +6,7 @@ app.config["MYSQL_USER"] = "admin"
 app.config["MYSQL_PASSWORD"] = "password"
 app.config["MYSQL_DB"] = "triggerdb"
 app.config["MYSQL_HOST"] = "192.168.0.26"
-app.config["MYSQL_PORT"] = "3306"
+app.config["MYSQL_PORT"] = 3306 # I made this a string and it was causing errors
 
 mysql = MySQL(app)
 # insert delete and update query
@@ -19,10 +19,8 @@ def index():
 def insert():
     if request.method == "POST":
         name = request.form.get("name")
-        salary = int(request.form.get("salary"))
+        salary = float(request.form.get("salary"))
 		
-        print(f"Name {name} Salary {salary}")
-
         if name and salary:
             try:
                 cur = mysql.connection.cursor()
