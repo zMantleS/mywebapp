@@ -31,7 +31,7 @@ def insert():
                 return render_template("insert.html", status="Good")
             except Exception as e:
                 print(f"Error: {e}")
-                return render_template("moviesubmit.html", status="Bad")
+                return render_template("insert.html", status="Bad")
     else:
         return render_template("insert.html")
 
