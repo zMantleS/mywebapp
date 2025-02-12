@@ -37,22 +37,16 @@ def insert():
 
 
 
-@app.route("/delete", methods=["GET","POST"])
-def delete():
-	if request.method == "POST":
-		print("yay")
-	else:
-		return render_template("delete.html")
+@app.route("/view-all")
+def view():
+    cur = mysql.connection.cursor()
+    query = "SELECT * FROM employees"
+    cur.execute(query)
+    employees = cur.fetchall()
+    cur.close()
+    
+    return render_template("see-all.html", employees=employees)
 	
-
-@app.route("/update", methods=["GET","POST"])
-def update():
-	if request.method == "POST":
-		print("Yay")
-	else:
-		return render_template("update.html")
-
-
 
 
 app.run(host="0.0.0.0", port=5000, debug=True)
