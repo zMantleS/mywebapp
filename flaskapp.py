@@ -32,7 +32,7 @@ def insert():
             except Exception as e:
                 return render_template("insert.html", status="Bad")
     else:
-        # helloooooooo
+        # hellooooooooo
         return render_template("insert.html")
 
 
